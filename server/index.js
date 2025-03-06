@@ -38,6 +38,13 @@ const server = app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
 
+app.get('/',(req,res)=>{
+  res.send({
+    activeStatus:true,
+    error:false,
+  })
+})
+
 setupSocket(server);
 
 mongoose
